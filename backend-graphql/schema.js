@@ -62,7 +62,7 @@ const Mutation = new GraphQLObjectType({
             },
         },
         deleteNote: {
-            type: GraphQLString, // Returning the ID of the deleted note
+            type: GraphQLString,
             args: {
                 id: { type: new GraphQLNonNull(GraphQLString) },
             },
@@ -74,7 +74,7 @@ const Mutation = new GraphQLObjectType({
             },
         },
         updateNote: {
-            type: NoteType, // Returning the updated note
+            type: NoteType,
             args: {
                 id: { type: new GraphQLNonNull(GraphQLString) },
                 title: { type: GraphQLString },
@@ -103,7 +103,7 @@ const Mutation = new GraphQLObjectType({
                     .map((field, index) => `${field} = $${index + 1}`)
                     .join(", ");
 
-                values.push(id); // Add id to the values array for WHERE clause
+                values.push(id);
 
                 const query = `UPDATE notes SET ${setClause} WHERE id = $${values.length} RETURNING *`;
 

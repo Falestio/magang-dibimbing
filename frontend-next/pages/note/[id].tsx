@@ -52,7 +52,7 @@ const NoteDetail: React.FC = () => {
         });
       }
     } catch (error) {
-      // Handle error (e.g., show an error message)
+      // Handle error
       console.log("Error updating note:", error);
     }
   };
@@ -86,7 +86,7 @@ const NoteDetail: React.FC = () => {
         onClick={() => router.push("/")}
       />
       <Container maxW="container.md">
-        {updateError && <p>Error updating note: {updateError.message}</p>}
+        {updateError && <p>Terdapat error mengupdate kode: {updateError.message}</p>}
         <Box p={0}>
           <Input
             variant="unstyled"

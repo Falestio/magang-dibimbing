@@ -9,7 +9,7 @@ app.use(cors());
 
 app.use('/graphql', graphqlHTTP({
     schema,
-    graphiql: true, // Enables the GraphiQL IDE
+    graphiql: true,
 }));
 
 app.listen(port, () => {
